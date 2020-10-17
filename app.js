@@ -14,7 +14,7 @@ function getInpCountry() {
             outer += `
             <div class="card card-body mb-5">
             <h5>Flag: 
-             <img src="${data[country].flag}" width="150px" height="100px"></h5>
+             <img src="${data[country].flag}" width="150px" height="100px"></h5><br>
             <h5>Region: ${data[country].region}</h5>
             <h5>Capital: ${data[country].capital}</h5>
             <h5>Demonym: ${data[country].demonym}</h5>
@@ -47,4 +47,14 @@ function getCountries() {
             document.getElementById('output').innerHTML = outer;
         })
         .catch(Error => {'invalid'})
+    }
+
+    document.getElementById('dark').addEventListener('click', darkMode);
+    function darkMode() {
+        document.getElementById('dark').innerHTML = 'Light Mode';
+        document.body.style.background = 'black';
+        document.body.style.color = 'white'
+        document.querySelector('.card').style.background = '#222';
+        document.querySelectorAll('.card').forEach((val, i) => {
+         val.style.background = '#222';})
     }

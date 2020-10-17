@@ -8,22 +8,27 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Countries In The World</title>
     <style>
-        .card {
+        /* .card {
             background: linear-gradient( 45deg, #e0eafc,#cfdef3);
+        } */
+        #dark {
+            border: none;
+            position: absolute;
+            right: 0;
+            background: white;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <button id="dark">Dark Mode</button>
         <h2 class="mb-4">All Countries</h2>
         <input type="text" id="input" placeholder="Enter Country" class="">
         <p>Search by country name. It can be the native name or partial name</p>
         <div class="d-flex">
-            <button class="btn btn-success mr-4" id="inpCountry" onclick="getInpCountry">
-                Get Country</button>
-            <button class="btn btn-warning mr-4" id="countries" onclick="getCountries">
-                All Countries</button>
+            <button class="btn btn-success mr-4" id="inpCountry" >Get Country</button>
+            <button class="btn btn-warning mr-4" id="countries">All Countries</button>
         </div>
         <hr>
         <div id="output"></div>
