@@ -14,13 +14,13 @@ function getInpCountry() {
             outer += `
             <div class="card card-body mb-5">
             <h5>Flag: 
-             <img src="${data[country].flag}" width="150px" height="120px"></h5>
+             <img src="${data[country].flag}" width="150px" height="100px"></h5>
             <h5>Region: ${data[country].region}</h5>
             <h5>Capital: ${data[country].capital}</h5>
             <h5>Demonym: ${data[country].demonym}</h5>
+            <h5>Calling Code: +${data[country].callingCodes[0]}</h5>
             <h5>Population: ${data[country].population}</h5>
-            <h5>Currency: ${data[country].currencies[0].name}</h5>
-            <h5>Capital: ${data[country].capital}</h5>
+            <h5>Currency: ${data[country].currencies[0].name} (${data[country].currencies[0].symbol})</h5>
             </div>
             `
         });
