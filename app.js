@@ -1,8 +1,13 @@
+// window.onload (
+//  darkMode()
+// )
+
 const input = document.getElementById('input');
 document.getElementById('inpCountry').addEventListener('click', getInpCountry);
 document.getElementById('countries').addEventListener('click', getCountries);
 let output = document.getElementById('output');
 
+let isDark = document.body.style.background
 
 function getInpCountry() {
     fetch('https://restcountries.eu/rest/v2/name/' + input.value)
@@ -24,9 +29,17 @@ function getInpCountry() {
             </div>
             `
         });
-        document.getElementById('output').innerHTML= outer
+        document.getElementById('output').innerHTML= outer;
+        if(document.body.classList.contains("dark-mode")){
+            document.querySelector('.card').style.background = '#222';
+            document.querySelectorAll('.card').forEach((val, i) => {
+            val.style.background = '#222';})
+        }
+        else {
+            document.querySelector('.card').style.background = "linear-gradient( 45deg, #e0eafc,#cfdef3)";
+        }
     } )
-    .catch()
+    .catch(Error => {console.log('invalid')})
 }
 
 function getCountries() {
@@ -45,16 +58,42 @@ function getCountries() {
                 `
             })
             document.getElementById('output').innerHTML = outer;
+            if(document.body.classList.contains("dark-mode")){
+                document.querySelector('.card').style.background = '#222';
+                document.querySelectorAll('.card').forEach((val, i) => {
+                val.style.background = '#222';})
+            }
+            else {
+                document.querySelector('.card').style.background = "linear-gradient( 45deg, #e0eafc,#cfdef3)";
+            }
         })
         .catch(Error => {'invalid'})
     }
 
     document.getElementById('dark').addEventListener('click', darkMode);
     function darkMode() {
-        document.getElementById('dark').innerHTML = 'Light Mode';
-        document.body.style.background = 'black';
-        document.body.style.color = 'white'
-        document.querySelector('.card').style.background = '#222';
-        document.querySelectorAll('.card').forEach((val, i) => {
-         val.style.background = '#222';})
+        // if(document.body.style.background == "black") {
+        //     document.body.style.background = 'white';
+        //     document.body.style.color = 'black';
+        // }
+         document.body.classList.toggle("dark-mode")
+        if(document.body.classList.contains("dark-mode")) {
+            document.querySelector(".fa-moon").style.color = "#eee";
+            document.querySelector("#dark").style.color = "#eee";
+            document.querySelector("#dark").style.background = "#111";
+        if( document.querySelector('.card') ) {
+           document.querySelector('.card').style.background = '#222';
+           document.querySelectorAll('.card').forEach((val, i) => {
+           val.style.background = '#222';})}
+        }
+        
+    //     document.body.style.background = 'black';
+    //     document.body.style.color = 'white';
+    //   
+    else {
+        document.querySelector("#dark").style.background = "#eee";
+        document.querySelector("#dark").style.color = "#111";
+        document.querySelector(".fa-moon").style.color = "#111";
+        document.querySelector('.card').style.background = "linear-gradient( 45deg, #e0eafc,#cfdef3)";
+    }
     }
