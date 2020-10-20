@@ -27,6 +27,12 @@ function getInpCountry() {
         document.getElementById('output').innerHTML= outer
     } )
     .catch()
+       if(!(document.body.style.background == "")) {
+           darkMode();
+           alert("It's dark");
+}
+         else {alert(document.body.style.background)}
+    
 }
 
 function getCountries() {
@@ -47,7 +53,7 @@ function getCountries() {
             document.getElementById('output').innerHTML = outer;
         })
         .catch(Error => {'invalid'})
-        if(!document.body.style.background === "") {
+        if(!(document.body.style.background == " ")) {
            darkMode() }
          else {console.log(document.body.style.background)}
     }
