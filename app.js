@@ -47,6 +47,9 @@ function getCountries() {
             document.getElementById('output').innerHTML = outer;
         })
         .catch(Error => {'invalid'})
+        if(!document.body.style.background === "") {
+           darkMode() }
+         else {console.log(document.body.style.background)}
     }
 
     document.getElementById('dark').addEventListener('click', darkMode);
