@@ -95,8 +95,9 @@ function getCountries() {
         document.querySelector("#dark").style.background = "#eee";
         document.querySelector("#dark").style.color = "#111";
         document.querySelector(".fa-moon").style.color = "#111";
-        if (document.querySelector(".card")) {
-        document.querySelector('.card').style.background = "linear-gradient( 45deg, #e0eafc,#cfdef3)";
+        if( document.querySelector('.card') ) {
+          document.querySelector('.card').style.background = "linear-gradient( 45deg, #e0eafc,#cfdef3)";
+          document.querySelectorAll('.card').forEach( val => val.style.background = "linear-gradient( 45deg, #e0eafc,#cfdef3)");
     }
     }
     }
