@@ -29,6 +29,7 @@ function getInpCountry() {
             </div>
             `
         });
+
         document.getElementById('output').innerHTML= outer;
         if(document.body.classList.contains("dark-mode")){
             document.querySelector('.card').style.background = '#222';
@@ -68,7 +69,7 @@ function getCountries() {
             }
         })
         .catch(Error => {'invalid'})
-    }
+         }
 
     document.getElementById('dark').addEventListener('click', darkMode);
     function darkMode() {
@@ -94,6 +95,8 @@ function getCountries() {
         document.querySelector("#dark").style.background = "#eee";
         document.querySelector("#dark").style.color = "#111";
         document.querySelector(".fa-moon").style.color = "#111";
+        if (document.querySelector(".card")) {
         document.querySelector('.card').style.background = "linear-gradient( 45deg, #e0eafc,#cfdef3)";
+    }
     }
     }
