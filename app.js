@@ -79,7 +79,7 @@ function getCountries() {
         // }
          document.body.classList.toggle("dark-mode")
         if(document.body.classList.contains("dark-mode")) {
-            document.querySelector(".fa-moon").style.color = "#eee";
+            document.querySelector("#dark").innerHTML = `<i class="fas fa-sun"></i> Mode`;
             document.querySelector("#dark").style.color = "#eee";
             document.querySelector("#dark").style.background = "#111";
         if( document.querySelector('.card') ) {
@@ -93,6 +93,7 @@ function getCountries() {
     //   
     else {
         document.querySelector("#dark").style.background = "#eee";
+        document.querySelector("#dark").innerHTML = `<i class="fas fa-moon"></i> Mode`;
         document.querySelector("#dark").style.color = "#111";
         document.querySelector(".fa-moon").style.color = "#111";
         if( document.querySelector('.card') ) {
