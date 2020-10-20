@@ -24,15 +24,12 @@ function getInpCountry() {
             </div>
             `
         });
-        document.getElementById('output').innerHTML= outer
+        document.getElementById('output').innerHTML= outer;
+        if(!(document.body.style.background == " ")) {
+           darkMode() }
+         else {console.log(document.body.style.background)}
     } )
-    .catch()
-       if(document.body.style.background == "") {
-           darkMode();
-           alert("It's dark");
-}
-         else {alert("light", document.body.style.background)}
-    
+    .catch(Error => {'invalid'})
 }
 
 function getCountries() {
